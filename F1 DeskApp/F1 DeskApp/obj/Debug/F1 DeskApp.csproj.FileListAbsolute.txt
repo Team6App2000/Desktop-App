@@ -1,0 +1,9 @@
+C:\Users\Jonas Winston\source\repos\F1 DeskApp\F1 DeskApp\bin\Debug\F1 DeskApp.exe.config
+C:\Users\Jonas Winston\source\repos\F1 DeskApp\F1 DeskApp\bin\Debug\F1 DeskApp.exe
+C:\Users\Jonas Winston\source\repos\F1 DeskApp\F1 DeskApp\bin\Debug\F1 DeskApp.pdb
+C:\Users\Jonas Winston\source\repos\F1 DeskApp\F1 DeskApp\obj\Debug\F1 DeskApp.csprojAssemblyReference.cache
+C:\Users\Jonas Winston\source\repos\F1 DeskApp\F1 DeskApp\obj\Debug\F1_DeskApp.Properties.Resources.resources
+C:\Users\Jonas Winston\source\repos\F1 DeskApp\F1 DeskApp\obj\Debug\F1 DeskApp.csproj.GenerateResource.cache
+C:\Users\Jonas Winston\source\repos\F1 DeskApp\F1 DeskApp\obj\Debug\F1 DeskApp.csproj.CoreCompileInputs.cache
+C:\Users\Jonas Winston\source\repos\F1 DeskApp\F1 DeskApp\obj\Debug\F1 DeskApp.exe
+C:\Users\Jonas Winston\source\repos\F1 DeskApp\F1 DeskApp\obj\Debug\F1 DeskApp.pdb
