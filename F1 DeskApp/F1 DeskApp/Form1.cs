@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,9 @@ using MySql.Data.MySqlClient;
 
 namespace F1_DeskApp
 {
+
+
+
     public partial class Form1 : Form
     {
         public Form1()
@@ -28,27 +32,34 @@ namespace F1_DeskApp
             System.Diagnostics.Process.Start("http://aka.ms/dotnet-get-started-desktop");
 
         }
-
+       
         private void button1_Click(object sender, EventArgs e)
         {
             MySql.Data.MySqlClient.MySqlConnection connection;
-            string server = "225124.db.tornado-node.net";
-            string database = "db225124";
-            string uid = "db225124";
-            string password = "ysZg9Gbj^_wQ";
+            string server = "localhost:3306";
+            string database = "mysql256328";
+            string uid = "mysql256328";
+            string password = @"V\S|=Sv*D*Z3";
             string connectionString;
             connectionString = "SERVER=" + server + ";" + "DATABASE=" +
             database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
             connection = new MySqlConnection(connectionString);
             try
             {
-                connection.ConnectionString = connectionString;
                 connection.Open();
+                MessageBox.Show("Connection Successful");
+                connection.Close();
+                
             }
-            catch (Exception ex)
+            catch (MySqlException)
             {
-                MessageBox.Show("Error occured. Please try again later.");
+                MessageBox.Show("Database Connection Failed");
+            }
+
+            
+            
+            
             }
         }
     }
-}
+
