@@ -35,7 +35,7 @@ namespace F1_DeskApp
        
         private void button1_Click(object sender, EventArgs e)
         {
-            //generer en connection string for database
+            // generer en connection string for database
             MySql.Data.MySqlClient.MySqlConnection connection;
             string server = "256328.db.tornado-node.net";
             string database = "mysql256328";
@@ -46,7 +46,7 @@ namespace F1_DeskApp
             database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
             connection = new MySqlConnection(connectionString);
 
-            //tester om databasetilkoblingen fungerer
+            // tester om databasetilkoblingen fungerer
             try
             {
                 connection.Open();
