@@ -66,6 +66,42 @@ namespace F1_DeskApp
 
         private void Button2_Click(object sender, EventArgs e)
         {
+            // generer en connection string for database
+            MySql.Data.MySqlClient.MySqlConnection connection;
+            string server = "256328.db.tornado-node.net";
+            string database = "mysql256328";
+            string uid = "mysql256328";
+            string password = @"V\S|=Sv*D*Z3";
+            string connectionString;
+            connectionString = "SERVER=" + server + ";" + "DATABASE=" +
+            database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
+            connection = new MySqlConnection(connectionString);
+
+            // The Query to be executed is grabbed from the text box
+            try
+            {
+
+                string editQuery = textBox1.Text;
+                MySqlCommand command = new MySqlCommand(editQuery, connection);
+                MySqlDataReader dataReader;
+                connection.Open();
+                dataReader = command.ExecuteReader();
+                MessageBox.Show("Command Executed");
+                while (dataReader.Read())
+                {
+                }
+                connection.Close();
+            }
+            catch (MySqlException)
+            {
+                MessageBox.Show("Query execution failed");
+            }
+        }
+
+
+
+        private void TextBox1_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }
