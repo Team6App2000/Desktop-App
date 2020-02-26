@@ -76,7 +76,6 @@ namespace F1_DeskApp
             connectionString = "SERVER=" + server + ";" + "DATABASE=" +
             database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
             connection = new MySqlConnection(connectionString);
-
             // The Query to be executed is grabbed from the text box
             try
             {
@@ -86,10 +85,13 @@ namespace F1_DeskApp
                 MySqlDataReader dataReader;
                 connection.Open();
                 dataReader = command.ExecuteReader();
-                MessageBox.Show("Command Executed");
-                while (dataReader.Read())
+                while (dataReader.HasRows)
                 {
+                    DataTable readTable = new DataTable();
+                    readTable.Load(dataReader);
+                    dataGridView1.DataSource = readTable;
                 }
+                MessageBox.Show("Command Executed");
                 connection.Close();
             }
             catch (MySqlException)
