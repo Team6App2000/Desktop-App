@@ -1,0 +1,26 @@
+﻿<Properties StartupConfiguration="{12273129-344A-4866-BAFF-56F50903413B}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="F1 DeskApp/Form1.cs">
+    <Files>
+      <File FileName="F1 DeskApp/Form1.resx" Line="1" Column="1" />
+      <File FileName="F1 DeskApp/Form1.cs" Line="38" Column="16" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="F1 DeskApp" expanded="True">
+            <Node name="F1 DeskApp" expanded="True">
+              <Node name="Form1.cs" expanded="True" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.F1_220DeskApp PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
