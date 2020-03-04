@@ -33,7 +33,7 @@ namespace F1_DeskApp
 
         }
        
-        private void button1_Click(object sender, EventArgs e)
+        private void TestButton_Click(object sender, EventArgs e)
         {
             // generer en connection string for database
             MySql.Data.MySqlClient.MySqlConnection connection;
@@ -64,7 +64,7 @@ namespace F1_DeskApp
             
             }
 
-        private void Button2_Click(object sender, EventArgs e)
+        private void ExecuteButton_Click(object sender, EventArgs e)
         {
             // generer en connection string for database
             MySql.Data.MySqlClient.MySqlConnection connection;
@@ -105,6 +105,16 @@ namespace F1_DeskApp
         private void TextBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void viewLikeThatToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void quitProgramMenu_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
     }

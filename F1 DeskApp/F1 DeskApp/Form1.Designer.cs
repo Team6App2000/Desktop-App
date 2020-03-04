@@ -28,25 +28,39 @@ namespace F1_DeskApp
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.TestButton = new System.Windows.Forms.Button();
             this.helloWorldLabel = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.ExecuteButton = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.MenuMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.doThisMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.doThatMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewMeMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewMeLikeThisMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewLikeThatMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.yesMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.changeItMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.noIChangedMyMindMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.opsAgainRedoItMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.ctrlzMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.quitProgramMenu = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button1
+            // TestButton
             // 
-            this.button1.Location = new System.Drawing.Point(196, 66);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(126, 32);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Test DB";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.TestButton.Location = new System.Drawing.Point(196, 66);
+            this.TestButton.Margin = new System.Windows.Forms.Padding(2);
+            this.TestButton.Name = "TestButton";
+            this.TestButton.Size = new System.Drawing.Size(126, 32);
+            this.TestButton.TabIndex = 2;
+            this.TestButton.Text = "Test DB";
+            this.TestButton.UseVisualStyleBackColor = true;
+            this.TestButton.Click += new System.EventHandler(this.TestButton_Click);
             // 
             // helloWorldLabel
             // 
@@ -59,16 +73,16 @@ namespace F1_DeskApp
             this.helloWorldLabel.TabIndex = 3;
             this.helloWorldLabel.Text = "Hello World!";
             // 
-            // button2
+            // ExecuteButton
             // 
-            this.button2.Location = new System.Drawing.Point(196, 208);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(126, 36);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Execute";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.Button2_Click);
+            this.ExecuteButton.Location = new System.Drawing.Point(196, 208);
+            this.ExecuteButton.Margin = new System.Windows.Forms.Padding(2);
+            this.ExecuteButton.Name = "ExecuteButton";
+            this.ExecuteButton.Size = new System.Drawing.Size(126, 36);
+            this.ExecuteButton.TabIndex = 4;
+            this.ExecuteButton.Text = "Execute";
+            this.ExecuteButton.UseVisualStyleBackColor = true;
+            this.ExecuteButton.Click += new System.EventHandler(this.ExecuteButton_Click);
             // 
             // textBox1
             // 
@@ -99,6 +113,105 @@ namespace F1_DeskApp
             this.label1.Text = "Write your SQL query here";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MenuMenu,
+            this.viewMeMenu,
+            this.yesMenu});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1148, 24);
+            this.menuStrip1.TabIndex = 8;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // MenuMenu
+            // 
+            this.MenuMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.doThisMenu,
+            this.doThatMenu,
+            this.quitProgramMenu});
+            this.MenuMenu.Name = "MenuMenu";
+            this.MenuMenu.Size = new System.Drawing.Size(50, 20);
+            this.MenuMenu.Text = "Menu";
+            // 
+            // doThisMenu
+            // 
+            this.doThisMenu.Name = "doThisMenu";
+            this.doThisMenu.Size = new System.Drawing.Size(180, 22);
+            this.doThisMenu.Text = "Do this";
+            // 
+            // doThatMenu
+            // 
+            this.doThatMenu.Name = "doThatMenu";
+            this.doThatMenu.Size = new System.Drawing.Size(180, 22);
+            this.doThatMenu.Text = "Do that";
+            // 
+            // viewMeMenu
+            // 
+            this.viewMeMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.viewMeLikeThisMenu,
+            this.viewLikeThatMenu});
+            this.viewMeMenu.Name = "viewMeMenu";
+            this.viewMeMenu.Size = new System.Drawing.Size(64, 20);
+            this.viewMeMenu.Text = "View me";
+            // 
+            // viewMeLikeThisMenu
+            // 
+            this.viewMeLikeThisMenu.Name = "viewMeLikeThisMenu";
+            this.viewMeLikeThisMenu.Size = new System.Drawing.Size(164, 22);
+            this.viewMeLikeThisMenu.Text = "View me like this";
+            // 
+            // viewLikeThatMenu
+            // 
+            this.viewLikeThatMenu.Name = "viewLikeThatMenu";
+            this.viewLikeThatMenu.Size = new System.Drawing.Size(164, 22);
+            this.viewLikeThatMenu.Text = "View me like that";
+            this.viewLikeThatMenu.Click += new System.EventHandler(this.viewLikeThatToolStripMenuItem_Click);
+            // 
+            // yesMenu
+            // 
+            this.yesMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.changeItMenu,
+            this.noIChangedMyMindMenu,
+            this.opsAgainRedoItMenu,
+            this.ctrlzMenu});
+            this.yesMenu.Name = "yesMenu";
+            this.yesMenu.Size = new System.Drawing.Size(36, 20);
+            this.yesMenu.Text = "Yes";
+            // 
+            // changeItMenu
+            // 
+            this.changeItMenu.Name = "changeItMenu";
+            this.changeItMenu.Size = new System.Drawing.Size(197, 22);
+            this.changeItMenu.Text = "change it";
+            // 
+            // noIChangedMyMindMenu
+            // 
+            this.noIChangedMyMindMenu.Name = "noIChangedMyMindMenu";
+            this.noIChangedMyMindMenu.Size = new System.Drawing.Size(197, 22);
+            this.noIChangedMyMindMenu.Text = "no, i changed my mind";
+            // 
+            // opsAgainRedoItMenu
+            // 
+            this.opsAgainRedoItMenu.Name = "opsAgainRedoItMenu";
+            this.opsAgainRedoItMenu.Size = new System.Drawing.Size(197, 22);
+            this.opsAgainRedoItMenu.Text = "ops, again, re-do it";
+            // 
+            // ctrlzMenu
+            // 
+            this.ctrlzMenu.Name = "ctrlzMenu";
+            this.ctrlzMenu.Size = new System.Drawing.Size(197, 22);
+            this.ctrlzMenu.Text = "ctrl+z";
+            // 
+            // quitProgramMenu
+            // 
+            this.quitProgramMenu.Name = "quitProgramMenu";
+            this.quitProgramMenu.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Q)));
+            this.quitProgramMenu.Size = new System.Drawing.Size(189, 22);
+            this.quitProgramMenu.Text = "Quit Program";
+            this.quitProgramMenu.Click += new System.EventHandler(this.quitProgramMenu_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -107,25 +220,42 @@ namespace F1_DeskApp
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.ExecuteButton);
             this.Controls.Add(this.helloWorldLabel);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.TestButton);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "DeskApp";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button TestButton;
         private System.Windows.Forms.Label helloWorldLabel;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button ExecuteButton;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem MenuMenu;
+        private System.Windows.Forms.ToolStripMenuItem doThisMenu;
+        private System.Windows.Forms.ToolStripMenuItem doThatMenu;
+        private System.Windows.Forms.ToolStripMenuItem viewMeMenu;
+        private System.Windows.Forms.ToolStripMenuItem viewMeLikeThisMenu;
+        private System.Windows.Forms.ToolStripMenuItem viewLikeThatMenu;
+        private System.Windows.Forms.ToolStripMenuItem yesMenu;
+        private System.Windows.Forms.ToolStripMenuItem changeItMenu;
+        private System.Windows.Forms.ToolStripMenuItem noIChangedMyMindMenu;
+        private System.Windows.Forms.ToolStripMenuItem opsAgainRedoItMenu;
+        private System.Windows.Forms.ToolStripMenuItem ctrlzMenu;
+        private System.Windows.Forms.ToolStripMenuItem quitProgramMenu;
     }
 }
 
