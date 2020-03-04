@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Configuration;
 using System.Windows.Forms;
 using MySql.Data;
 using MySql.Data.MySqlClient;
@@ -24,6 +25,7 @@ namespace F1_DeskApp
         public Form1()
         {
             InitializeComponent();
+
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -37,14 +39,9 @@ namespace F1_DeskApp
         {
             // generer en connection string for database
             MySql.Data.MySqlClient.MySqlConnection connection;
-            string server = "256328.db.tornado-node.net";
-            string database = "mysql256328";
-            string uid = "mysql256328";
-            string password = @"V\S|=Sv*D*Z3";
             string connectionString;
-            connectionString = "SERVER=" + server + ";" + "DATABASE=" +
-            database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
-            connection = new MySqlConnection(connectionString);
+            
+            connection = new MySqlConnection(ConfigurationManager.ConnectionStrings["datab"].ConnectionString);
 
             // tester om databasetilkoblingen fungerer
             try
@@ -68,13 +65,8 @@ namespace F1_DeskApp
         {
             // generer en connection string for database
             MySql.Data.MySqlClient.MySqlConnection connection;
-            string server = "256328.db.tornado-node.net";
-            string database = "mysql256328";
-            string uid = "mysql256328";
-            string password = @"V\S|=Sv*D*Z3";
             string connectionString;
-            connectionString = "SERVER=" + server + ";" + "DATABASE=" +
-            database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
+            connectionString = ConfigurationManager.ConnectionStrings["database"].ConnectionString;
             connection = new MySqlConnection(connectionString);
             // The Query to be executed is grabbed from the text box
             try
@@ -103,6 +95,11 @@ namespace F1_DeskApp
 
 
         private void TextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
