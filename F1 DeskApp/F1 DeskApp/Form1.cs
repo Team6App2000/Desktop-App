@@ -28,6 +28,24 @@ namespace F1_DeskApp
 
         }
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            MySql.Data.MySqlClient.MySqlConnection connection;
+            connection = new MySqlConnection(ConfigurationManager.ConnectionStrings["datab"].ConnectionString);
+            string editQuery = @"SELECT table_name FROM information_schema.tables
+                                WHERE table_schema = 'mysql256328'
+                                LIMIT 0, 8;;";
+            MySqlCommand command = new MySqlCommand(editQuery, connection);
+            MySqlDataReader dataReader;
+            connection.Open();
+            dataReader = command.ExecuteReader();
+            while (dataReader.HasRows)
+            {
+                DataTable readTable = new DataTable();
+                readTable.Load(dataReader);
+                comboBox1.DataSource = readTable;
+            }
+        }
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             // Click on the link below to continue learning how to build a desktop app using WinForms!
@@ -56,17 +74,28 @@ namespace F1_DeskApp
                 MessageBox.Show("Database Connection Failed");
             }
 
-            
-            
-            
+            connection = new MySqlConnection(ConfigurationManager.ConnectionStrings["datab"].ConnectionString);
+            string editQuery = @"SELECT table_name FROM information_schema.tables
+                                WHERE table_schema = 'mysql256328'
+                                LIMIT 0, 8;;";
+            MySqlCommand command = new MySqlCommand(editQuery, connection);
+            MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+            DataSet comboboxSet = new DataSet();
+            adapter.Fill(comboboxSet);
+            for(int i = 0; i < comboboxSet.Tables[0].Rows.Count; i++)
+                {
+                comboBox1.Items.Add(comboboxSet.Tables[0].Rows[i][0].ToString());
+                }
             }
+
+
 
         private void Button2_Click(object sender, EventArgs e)
         {
             // generer en connection string for database
             MySql.Data.MySqlClient.MySqlConnection connection;
             string connectionString;
-            connectionString = ConfigurationManager.ConnectionStrings["database"].ConnectionString;
+            connectionString = ConfigurationManager.ConnectionStrings["datab"].ConnectionString;
             connection = new MySqlConnection(connectionString);
             // The Query to be executed is grabbed from the text box
             try
@@ -99,10 +128,12 @@ namespace F1_DeskApp
 
         }
 
+        
         private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
+
     }
     }
 
