@@ -25,10 +25,11 @@ namespace F1_DeskApp
         public Form1()
         {
             InitializeComponent();
+            Shown += Form1_Shown;
 
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void Form1_Shown(object sender, EventArgs e)
         {
             MySql.Data.MySqlClient.MySqlConnection connection;
             connection = new MySqlConnection(ConfigurationManager.ConnectionStrings["datab"].ConnectionString);
@@ -36,14 +37,12 @@ namespace F1_DeskApp
                                 WHERE table_schema = 'mysql256328'
                                 LIMIT 0, 8;;";
             MySqlCommand command = new MySqlCommand(editQuery, connection);
-            MySqlDataReader dataReader;
-            connection.Open();
-            dataReader = command.ExecuteReader();
-            while (dataReader.HasRows)
+            MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+            DataSet comboboxSet = new DataSet();
+            adapter.Fill(comboboxSet);
+            for (int i = 0; i < comboboxSet.Tables[0].Rows.Count; i++)
             {
-                DataTable readTable = new DataTable();
-                readTable.Load(dataReader);
-                comboBox1.DataSource = readTable;
+                comboBox1.Items.Add(comboboxSet.Tables[0].Rows[i][0].ToString());
             }
         }
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -74,18 +73,7 @@ namespace F1_DeskApp
                 MessageBox.Show("Database Connection Failed");
             }
 
-            connection = new MySqlConnection(ConfigurationManager.ConnectionStrings["datab"].ConnectionString);
-            string editQuery = @"SELECT table_name FROM information_schema.tables
-                                WHERE table_schema = 'mysql256328'
-                                LIMIT 0, 8;;";
-            MySqlCommand command = new MySqlCommand(editQuery, connection);
-            MySqlDataAdapter adapter = new MySqlDataAdapter(command);
-            DataSet comboboxSet = new DataSet();
-            adapter.Fill(comboboxSet);
-            for(int i = 0; i < comboboxSet.Tables[0].Rows.Count; i++)
-                {
-                comboBox1.Items.Add(comboboxSet.Tables[0].Rows[i][0].ToString());
-                }
+
             }
 
 
