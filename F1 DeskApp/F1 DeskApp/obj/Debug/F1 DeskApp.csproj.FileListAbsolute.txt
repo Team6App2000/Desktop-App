@@ -73,3 +73,21 @@ C:\Users\Jonas Winston\source\repos\Desktop-App\F1 DeskApp\F1 DeskApp\obj\Debug\
 C:\Users\Jonas Winston\source\repos\Desktop-App\F1 DeskApp\F1 DeskApp\obj\Debug\F1 DeskApp.csproj.CopyComplete
 C:\Users\Jonas Winston\source\repos\Desktop-App\F1 DeskApp\F1 DeskApp\obj\Debug\F1 DeskApp.exe
 C:\Users\Jonas Winston\source\repos\Desktop-App\F1 DeskApp\F1 DeskApp\obj\Debug\F1 DeskApp.pdb
+C:\Users\jowih\source\repos\F1 DeskApp\F1 DeskApp\obj\Debug\F1 DeskApp.csprojAssemblyReference.cache
+C:\Users\jowih\source\repos\F1 DeskApp\F1 DeskApp\obj\Debug\F1_DeskApp.Form1.resources
+C:\Users\jowih\source\repos\F1 DeskApp\F1 DeskApp\obj\Debug\F1_DeskApp.Properties.Resources.resources
+C:\Users\jowih\source\repos\F1 DeskApp\F1 DeskApp\obj\Debug\F1 DeskApp.csproj.GenerateResource.cache
+C:\Users\jowih\source\repos\F1 DeskApp\F1 DeskApp\obj\Debug\F1 DeskApp.exe
+C:\Users\jowih\source\repos\F1 DeskApp\F1 DeskApp\obj\Debug\F1 DeskApp.pdb
+C:\Users\jowih\source\repos\F1 DeskApp\F1 DeskApp\bin\Debug\F1 DeskApp.exe.config
+C:\Users\jowih\source\repos\F1 DeskApp\F1 DeskApp\bin\Debug\F1 DeskApp.exe
+C:\Users\jowih\source\repos\F1 DeskApp\F1 DeskApp\bin\Debug\F1 DeskApp.pdb
+C:\Users\jowih\source\repos\F1 DeskApp\F1 DeskApp\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\jowih\source\repos\F1 DeskApp\F1 DeskApp\bin\Debug\Google.Protobuf.dll
+C:\Users\jowih\source\repos\F1 DeskApp\F1 DeskApp\bin\Debug\MySql.Data.dll
+C:\Users\jowih\source\repos\F1 DeskApp\F1 DeskApp\bin\Debug\Renci.SshNet.dll
+C:\Users\jowih\source\repos\F1 DeskApp\F1 DeskApp\bin\Debug\Ubiety.Dns.Core.dll
+C:\Users\jowih\source\repos\F1 DeskApp\F1 DeskApp\bin\Debug\Google.Protobuf.xml
+C:\Users\jowih\source\repos\F1 DeskApp\F1 DeskApp\bin\Debug\MySql.Data.xml
+C:\Users\jowih\source\repos\F1 DeskApp\F1 DeskApp\bin\Debug\Renci.SshNet.xml
+C:\Users\jowih\source\repos\F1 DeskApp\F1 DeskApp\obj\Debug\F1 DeskApp.csproj.CopyComplete
