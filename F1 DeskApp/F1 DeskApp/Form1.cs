@@ -30,21 +30,24 @@ namespace F1_DeskApp
         }
 
         private void Form1_Shown(object sender, EventArgs e)
+
         {
+            // Legger til tabeller fra database i drop-down meny
             MySql.Data.MySqlClient.MySqlConnection connection;
             connection = new MySqlConnection(ConfigurationManager.ConnectionStrings["datab"].ConnectionString);
             string editQuery = @"SELECT table_name FROM information_schema.tables
                                 WHERE table_schema = 'mysql256328'
-                                LIMIT 0, 8;;";
+                                LIMIT 0, 8;";
             MySqlCommand command = new MySqlCommand(editQuery, connection);
             MySqlDataAdapter adapter = new MySqlDataAdapter(command);
             DataSet comboboxSet = new DataSet();
             adapter.Fill(comboboxSet);
             for (int i = 0; i < comboboxSet.Tables[0].Rows.Count; i++)
             {
-                comboBox1.Items.Add(comboboxSet.Tables[0].Rows[i][0].ToString());
+                TableSelect.Items.Add(comboboxSet.Tables[0].Rows[i][0].ToString());
             }
         }
+
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             // Click on the link below to continue learning how to build a desktop app using WinForms!
@@ -89,7 +92,7 @@ namespace F1_DeskApp
             try
             {
 
-                string editQuery = textBox1.Text;
+                string editQuery = "SELECT * FROM `" + TableSelect.Text + "` WHERE `" + ColumnSelect.Text + "` LIKE '" + SearchTerm.Text + "'";
                 MySqlCommand command = new MySqlCommand(editQuery, connection);
                 MySqlDataReader dataReader;
                 connection.Open();
@@ -105,7 +108,16 @@ namespace F1_DeskApp
             }
             catch (MySqlException)
             {
-                MessageBox.Show("Query execution failed");
+                if(TableSelect.Text == "Select Table")
+                {
+                    MessageBox.Show("Please select a table");
+                }
+
+                else
+                {
+                    MessageBox.Show("Query execution failed");
+                }
+                
             }
         }
 
@@ -116,12 +128,38 @@ namespace F1_DeskApp
 
         }
 
-        
+        //Handles the "TableSelect" Drop-down menu
         private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Legger til søylenavn fra database i drop-down meny
+            MySql.Data.MySqlClient.MySqlConnection connection;
+            connection = new MySqlConnection(ConfigurationManager.ConnectionStrings["datab"].ConnectionString);
+            string editQuery = @"SELECT COLUMN_NAME FROM information_schema.columns WHERE table_schema = 'mysql256328' AND table_name = '" + TableSelect.Text + "'";
+            MySqlCommand command = new MySqlCommand(editQuery, connection);
+            MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+            DataSet tablenameSet = new DataSet();
+            tablenameSet.Clear();
+            adapter.Fill(tablenameSet);
+            for (int i = 0; i < tablenameSet.Tables[0].Rows.Count; i++)
+            {
+                ColumnSelect.Items.Add(tablenameSet.Tables[0].Rows[i][0].ToString());
+            }
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
         {
 
         }
 
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
+        }
     }
     }
 
