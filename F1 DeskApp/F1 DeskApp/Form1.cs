@@ -22,6 +22,7 @@ namespace F1_DeskApp
 
     public partial class Form1 : Form
     {
+        
         public Form1()
         {
             InitializeComponent();
@@ -54,13 +55,13 @@ namespace F1_DeskApp
             System.Diagnostics.Process.Start("http://aka.ms/dotnet-get-started-desktop");
 
         }
-       
+
         private void button1_Click(object sender, EventArgs e)
         {
-            // generer en connection string for database
+            // generates a connection string for the database
             MySql.Data.MySqlClient.MySqlConnection connection;
             string connectionString;
-            
+
             connection = new MySqlConnection(ConfigurationManager.ConnectionStrings["datab"].ConnectionString);
 
             // tester om databasetilkoblingen fungerer
@@ -69,7 +70,7 @@ namespace F1_DeskApp
                 connection.Open();
                 MessageBox.Show("Connection Successful");
                 connection.Close();
-                
+
             }
             catch (MySqlException)
             {
@@ -77,13 +78,13 @@ namespace F1_DeskApp
             }
 
 
-            }
+        }
 
 
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            // generer en connection string for database
+            // Generates a connection string for the database
             MySql.Data.MySqlClient.MySqlConnection connection;
             string connectionString;
             connectionString = ConfigurationManager.ConnectionStrings["datab"].ConnectionString;
@@ -108,7 +109,7 @@ namespace F1_DeskApp
             }
             catch (MySqlException)
             {
-                if(TableSelect.Text == "Select Table")
+                if (TableSelect.Text == "Select Table")
                 {
                     MessageBox.Show("Please select a table");
                 }
@@ -117,7 +118,7 @@ namespace F1_DeskApp
                 {
                     MessageBox.Show("Query execution failed");
                 }
-                
+
             }
         }
 
@@ -128,22 +129,41 @@ namespace F1_DeskApp
 
         }
 
-        //Handles the "TableSelect" Drop-down menu
+        //Handles the "TableSelect" drop-down menu
         private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Legger til søylenavn fra database i drop-down meny
+            // Field descriptors stored in array to be updated
+            List<string> descriptors = new List<string>();
+            descriptors.Add("Field (unused)");
+            descriptors.Add("Field (unused)");
+            descriptors.Add("Field (unused)");
+            descriptors.Add("Field (unused)");
+            descriptors.Add("Field (unused)");
+            descriptors.Add("Field (unused)");
+
+            // Adds columns from selected table to drop-down menu
             MySql.Data.MySqlClient.MySqlConnection connection;
             connection = new MySqlConnection(ConfigurationManager.ConnectionStrings["datab"].ConnectionString);
             string editQuery = @"SELECT COLUMN_NAME FROM information_schema.columns WHERE table_schema = 'mysql256328' AND table_name = '" + TableSelect.Text + "'";
             MySqlCommand command = new MySqlCommand(editQuery, connection);
             MySqlDataAdapter adapter = new MySqlDataAdapter(command);
             DataSet tablenameSet = new DataSet();
+            ColumnSelect.Text = "Select Column";
+            ColumnSelect.Items.Clear();
             tablenameSet.Clear();
             adapter.Fill(tablenameSet);
             for (int i = 0; i < tablenameSet.Tables[0].Rows.Count; i++)
             {
                 ColumnSelect.Items.Add(tablenameSet.Tables[0].Rows[i][0].ToString());
+                descriptors[i] = tablenameSet.Tables[0].Rows[i][0].ToString();
+
             }
+            Field1.Text = descriptors[0];
+            Field2.Text = descriptors[1];
+            Field3.Text = descriptors[2];
+            Field4.Text = descriptors[3];
+            Field5.Text = descriptors[4];
+            Field6.Text = descriptors[5];
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
@@ -160,6 +180,76 @@ namespace F1_DeskApp
         {
 
         }
+
+        private void helloWorldLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged_2(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox8_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void InsertButton_Click(object sender, EventArgs e)
+        {
+            List<string> EditFieldValues = new List<string>();
+            EditFieldValues.Add(EditField1.Text);
+            EditFieldValues.Add(EditField2.Text);
+            EditFieldValues.Add(EditField3.Text);
+            EditFieldValues.Add(EditField4.Text);
+            EditFieldValues.Add(EditField5.Text);
+            EditFieldValues.Add(EditField6.Text);
+
+            MySql.Data.MySqlClient.MySqlConnection connection;
+            connection = new MySqlConnection(ConfigurationManager.ConnectionStrings["datab"].ConnectionString);
+            string editQuery = @"INSERT INTO `" + TableSelect.Text + "` VALUES (";
+            editQuery += @"'" + EditFieldValues[0];
+            for (int i = 1; i < ColumnSelect.Items.Count; i++)
+            {
+                editQuery += @"', '" + EditFieldValues[i];
+            }
+            editQuery += "')";
+            MySqlCommand command = new MySqlCommand(editQuery, connection);
+            MySqlDataReader dataReader;
+            try
+            {
+                MessageBox.Show(editQuery);
+                connection.Open();
+                dataReader = command.ExecuteReader();
+                MessageBox.Show("Command Executed");
+                connection.Close();
+
+            }
+            catch (MySqlException)
+            {
+            }
+        }
     }
-    }
+}
 
