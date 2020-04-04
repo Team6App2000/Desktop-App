@@ -57,6 +57,9 @@ namespace F1_DeskApp
             this.Field4 = new System.Windows.Forms.Label();
             this.Field5 = new System.Windows.Forms.Label();
             this.Field6 = new System.Windows.Forms.Label();
+            this.ForeignKeyBox2 = new System.Windows.Forms.ComboBox();
+            this.ForeignKeyBox3 = new System.Windows.Forms.ComboBox();
+            this.ForeignKeyBox4 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -328,11 +331,41 @@ namespace F1_DeskApp
             this.Field6.TabIndex = 32;
             this.Field6.Text = "Field (unused)";
             // 
+            // ForeignKeyBox2
+            // 
+            this.ForeignKeyBox2.FormattingEnabled = true;
+            this.ForeignKeyBox2.Location = new System.Drawing.Point(127, 182);
+            this.ForeignKeyBox2.Name = "ForeignKeyBox2";
+            this.ForeignKeyBox2.Size = new System.Drawing.Size(100, 21);
+            this.ForeignKeyBox2.TabIndex = 33;
+            this.ForeignKeyBox2.Visible = false;
+            // 
+            // ForeignKeyBox3
+            // 
+            this.ForeignKeyBox3.FormattingEnabled = true;
+            this.ForeignKeyBox3.Location = new System.Drawing.Point(127, 208);
+            this.ForeignKeyBox3.Name = "ForeignKeyBox3";
+            this.ForeignKeyBox3.Size = new System.Drawing.Size(100, 21);
+            this.ForeignKeyBox3.TabIndex = 34;
+            this.ForeignKeyBox3.Visible = false;
+            // 
+            // ForeignKeyBox4
+            // 
+            this.ForeignKeyBox4.FormattingEnabled = true;
+            this.ForeignKeyBox4.Location = new System.Drawing.Point(127, 233);
+            this.ForeignKeyBox4.Name = "ForeignKeyBox4";
+            this.ForeignKeyBox4.Size = new System.Drawing.Size(100, 21);
+            this.ForeignKeyBox4.TabIndex = 35;
+            this.ForeignKeyBox4.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1148, 545);
+            this.Controls.Add(this.ForeignKeyBox4);
+            this.Controls.Add(this.ForeignKeyBox3);
+            this.Controls.Add(this.ForeignKeyBox2);
             this.Controls.Add(this.Field6);
             this.Controls.Add(this.Field5);
             this.Controls.Add(this.Field4);
@@ -402,6 +435,9 @@ namespace F1_DeskApp
         private System.Windows.Forms.Label Field4;
         private System.Windows.Forms.Label Field5;
         private System.Windows.Forms.Label Field6;
+        private System.Windows.Forms.ComboBox ForeignKeyBox2;
+        private System.Windows.Forms.ComboBox ForeignKeyBox3;
+        private System.Windows.Forms.ComboBox ForeignKeyBox4;
     }
 }
 
