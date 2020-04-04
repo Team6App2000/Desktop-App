@@ -47,6 +47,8 @@ namespace F1_DeskApp
             {
                 TableSelect.Items.Add(comboboxSet.Tables[0].Rows[i][0].ToString());
             }
+            TableSelect.Items.Remove("User");
+            TableSelect.Items.Remove("Favorites");
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -152,8 +154,31 @@ namespace F1_DeskApp
             ColumnSelect.Items.Clear();
             tablenameSet.Clear();
             adapter.Fill(tablenameSet);
+            EditField1.Enabled = true;
             for (int i = 0; i < tablenameSet.Tables[0].Rows.Count; i++)
             {
+                if (i == 0)
+                {
+                    switch (tablenameSet.Tables[0].Rows[i][0].ToString())
+                    {
+                        case "DriverID":
+                            EditField1.Enabled = false;
+                            break;
+                        case "RaceID":
+                            EditField1.Enabled = false;
+                            break;
+                        case "FavoriteID":
+                            EditField1.Enabled = false;
+                            break;
+                        case "EventID":
+                            EditField1.Enabled = false;
+                            break;
+                        default:
+                            break;
+
+                    }
+
+                }
                 ColumnSelect.Items.Add(tablenameSet.Tables[0].Rows[i][0].ToString());
                 descriptors[i] = tablenameSet.Tables[0].Rows[i][0].ToString();
 
@@ -164,6 +189,29 @@ namespace F1_DeskApp
             Field4.Text = descriptors[3];
             Field5.Text = descriptors[4];
             Field6.Text = descriptors[5];
+
+            // these handle eventual foreign key columns by removing their textbox and replacing it with a combobox of selectable values
+            EditField2.Visible = true;
+            EditField3.Visible = true;
+            EditField4.Visible = true;
+            ForeignKeyBox2.Visible = false;
+            ForeignKeyBox2.Visible = false;
+            ForeignKeyBox2.Visible = false;
+
+            // TODO: add ForeignKeyBox table fills here, make sure AUTO_INCREMENT columns are not added to INSERT/UPDATE statements below, add UPDATE/DELETE
+            if (Field2.Text == "EventID" || Field2.Text == "RaceID")
+            {
+                EditField2.Visible = false;
+                ForeignKeyBox2.Visible = true;
+            }
+            if(Field3.Text == "EventID")
+            {
+             
+            }
+            if (Field4.Text == "TeamName")
+            {
+
+            }
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
