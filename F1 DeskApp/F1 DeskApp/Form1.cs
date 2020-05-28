@@ -491,7 +491,7 @@ namespace F1_DeskApp
             MySqlDataReader dataReader;
             try
             {
-                MessageBox.Show(editQuery);
+                //MessageBox.Show(editQuery);
                 connection.Open();
                 dataReader = command.ExecuteReader();
                 MessageBox.Show("Command Executed");
@@ -602,7 +602,7 @@ namespace F1_DeskApp
             MySqlDataReader dataReader;
             try
             {
-                MessageBox.Show(editQuery);
+                //MessageBox.Show(editQuery);
                 connection.Open();
                 dataReader = command.ExecuteReader();
                 MessageBox.Show("Command Executed");
@@ -686,7 +686,7 @@ namespace F1_DeskApp
             MySqlDataReader dataReader;
             try
             {
-                MessageBox.Show(editQuery);
+                //MessageBox.Show(editQuery);
                 connection.Open();
                 dataReader = command.ExecuteReader();
                 MessageBox.Show("Command Executed");
