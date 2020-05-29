@@ -18,7 +18,6 @@ using MySql.Data.MySqlClient;
 namespace F1_DeskApp
 {
 
-    //TODO: update is a lot harder than i expected, why dont windows forms let you easily clone a control?? fields left empty okay or no? foreign keys?!?! end me
 
     public partial class Form1 : Form
     {
