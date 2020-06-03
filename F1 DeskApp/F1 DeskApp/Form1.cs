@@ -429,8 +429,8 @@ namespace F1_DeskApp
             MySqlCommand DeleteBoxCommand = new MySqlCommand(DeleteBoxQuery, connection);
             MySqlDataAdapter DeleteBoxAdapter = new MySqlDataAdapter(DeleteBoxCommand);
             DataSet DeleteBoxDataSet = new DataSet();
+            DeleteValueBox.Items.Clear();
             DeleteValueBox.Text = "Select " + DeleteColumnSelect.Text;
-            ForeignKeyBox1.Items.Clear();
             DeleteBoxDataSet.Clear();
             DeleteBoxAdapter.Fill(DeleteBoxDataSet);
             for (int i = 0; i < DeleteBoxDataSet.Tables[0].Rows.Count; i++)
