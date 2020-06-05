@@ -425,7 +425,7 @@ namespace F1_DeskApp
         {
             MySql.Data.MySqlClient.MySqlConnection connection;
             connection = new MySqlConnection(ConfigurationManager.ConnectionStrings["datab"].ConnectionString);
-            string DeleteBoxQuery = @"SELECT " + DeleteColumnSelect.Text + " FROM Drivers";
+            string DeleteBoxQuery = @"SELECT " + DeleteColumnSelect.Text + " FROM " + TableSelect.Text;
             MySqlCommand DeleteBoxCommand = new MySqlCommand(DeleteBoxQuery, connection);
             MySqlDataAdapter DeleteBoxAdapter = new MySqlDataAdapter(DeleteBoxCommand);
             DataSet DeleteBoxDataSet = new DataSet();
